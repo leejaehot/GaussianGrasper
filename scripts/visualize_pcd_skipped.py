@@ -413,19 +413,19 @@ if __name__ == "__main__":
     #gen_image_info(camera2base_list, images_info_save_path) # 없어도 됨
     #gen_camera_info(camera_info_save_path) # 없어도 됨
     
-    s_t0 = time.time()
-    all_points = gen_pointcloud(depth_path, image_path, mask_path, transforms_save_path)
-    e_t0 = time.time()
-    elapsed0 = e_t0 - s_t0
+    # s_t0 = time.time()
+    # all_points = gen_pointcloud(depth_path, image_path, mask_path, transforms_save_path)
+    # e_t0 = time.time()
+    # elapsed0 = e_t0 - s_t0
 
-    s_t1 = time.time()
-    # points3D.txt 파일로 저장
-    save_points3D(all_points, pts_save_path)
-    e_t1 = time.time()
-    elapsed1 = e_t1 - s_t1
+    # s_t1 = time.time()
+    # # points3D.txt 파일로 저장
+    # save_points3D(all_points, pts_save_path)
+    # e_t1 = time.time()
+    # elapsed1 = e_t1 - s_t1
     
-    print(f"Total points: {all_points.shape[0]}")
-    print(f"Points saved to: {pts_save_path}")
+    # print(f"Total points: {all_points.shape[0]}")
+    # print(f"Points saved to: {pts_save_path}")
 
     s_t2 = time.time()
     pc_vis_file_path = "/home/jclee/workspace/data_collection/scene_0001/point_clouds/points3D(skipped).txt"
@@ -433,6 +433,6 @@ if __name__ == "__main__":
     e_t2 = time.time()
     elapsed2 = e_t2 - s_t2
 
-    print(f"Point_Cloud Generating Time: {elapsed0:.2f} seconds")
-    print(f"Point_Cloud Saving Time: {elapsed1:.2f} seconds")
+    # print(f"Point_Cloud Generating Time: {elapsed0:.2f} seconds")
+    # print(f"Point_Cloud Saving Time: {elapsed1:.2f} seconds")
     print(f"Point_Cloud Visualizing Time: {elapsed2:.2f} seconds")
