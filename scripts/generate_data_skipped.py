@@ -397,32 +397,21 @@ def visualize_points3D_txt(txt_file):
 
 if __name__ == "__main__":
     path = '/home/jclee/workspace/data_collection/scene_0001/'
-    depth_path = path + 'depths/'
-    image_path = path + 'images/'
-    normal_path = path + 'normals/'
-    mask_path = path + 'boundary_mask/' # 
+    depth_path = path + 'gt_depths(skipped)/'
+    image_path = path + 'gt_images(skipped)/'
+    normal_path = path + 'gt_normals(skipped)/'
+    mask_path = path + 'gt_boundary_mask(skipped)/' # 
     #extrinsic_file = path + 'hand2base.txt' # ???
-    transforms_save_path = path + 'transforms.json' # -> 요놈을 hand2base로 코드 수정 필요.
+    transforms_save_path = path + 'gt_transforms(skipped).json' # -> 요놈을 hand2base로 코드 수정 필요.
     # camera_info_save_path = path + 'colmap/sparse/0/cameras.txt' # ???
     #images_info_save_path = path + 'colmap/sparse/0/images.txt' # ???
     os.makedirs('/home/jclee/workspace/data_collection/scene_0001/point_clouds',exist_ok=True)
-    pts_save_path = path + 'point_clouds/points3D.txt' # ???
+    pts_save_path = path + 'point_clouds/points3D(skipped).txt' # ???
     # pts, camera2base_list = get_pts_and_normal(depth_path, image_path, normal_path, extrinsic_file, mask_path)
 
     #gen_transforms(camera2base_list, transforms_save_path) # 이미 있음
     #gen_image_info(camera2base_list, images_info_save_path) # 없어도 됨
     #gen_camera_info(camera_info_save_path) # 없어도 됨
-
-
-    ### point cloud 저장처리
-    # all_points = np.concatenate(pts)
-    # index = np.random.choice(np.arange(0, all_points.shape[0]), size=all_points.shape[0] // 8, replace=False)
-    # all_points = all_points[index]
-    # np.savetxt(path + 'all_points.txt', all_points)
-    # points_id = np.arange(1, all_points.shape[0] + 1).astype(np.int32)
-    # all_points = np.concatenate((points_id[:, None], all_points), axis=1)
-    # np.savetxt(pts_save_path, all_points)
-    # transforms.json과 다른 데이터를 이용해 포인트 클라우드 재생성
     
     s_t0 = time.time()
     all_points = gen_pointcloud(depth_path, image_path, mask_path, transforms_save_path)
@@ -439,7 +428,7 @@ if __name__ == "__main__":
     print(f"Points saved to: {pts_save_path}")
 
     s_t2 = time.time()
-    pc_vis_file_path = "/home/jclee/workspace/data_collection/scene_0001/point_clouds/points3D.txt"
+    pc_vis_file_path = "/home/jclee/workspace/data_collection/scene_0001/point_clouds/points3D(skipped).txt"
     visualize_points3D_txt(pc_vis_file_path)
     e_t2 = time.time()
     elapsed2 = e_t2 - s_t2
