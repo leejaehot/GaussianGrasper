@@ -109,11 +109,13 @@ pip install -e .
 pip install -r requirements.txt
 ```
 
+## Data_collection -> add boundary_masking (only made at data_collection/scene_0001)
+[데이터 다운로드 관련 README](https://github.com/leejaehot/GaussianGrasper/tree/main/scripts)
+
 ## Data preparation and prepariprocessing
 ```bash
 python ./scripts/generate_data.py
 ```
-
 
 ## Reconstruction 
 
