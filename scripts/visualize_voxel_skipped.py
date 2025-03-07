@@ -645,7 +645,7 @@ def create_minecraft_voxel_mesh(occupancy, min_bound, voxel_size):
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="Voxelize a point cloud from a .txt file and visualize it.")
-    parser.add_argument("--input_file", type=str, default="/home/jclee/workspace/data_collection/scene_0001/point_clouds/points3D(skipped).txt", help="Path to the input point cloud .txt file.")
+    parser.add_argument("--input_file", type=str, default="/home/shlee/ws_jclee/scene_0001_jclee/point_clouds/points3D.txt", help="Path to the input point cloud .txt file.")
     parser.add_argument("--voxel_size", type=float, default=None, help="Size of each voxel in units of the point cloud coordinates.")
     parser.add_argument("--map_size", type=int, default=100, help="Number of voxels per axis for the grid. Overrides voxel_size if provided.")
     args = parser.parse_args()
